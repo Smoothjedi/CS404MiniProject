@@ -4,24 +4,19 @@ namespace MiniProject.SearchMethods
 {
     public class SearchMethods
     {
-        public List<int> BubbleSort(List<int> initialList)
+        public List<int> BubbleSort(List<int> list)
         {
-            var listCopy = JsonSerializer.Serialize(initialList);
-            var copiedList = JsonSerializer.Deserialize<List<int>>(listCopy);
-            if (copiedList == null)
-                return new List<int>();
-
-            for (int j = 0; j <= copiedList.Count - 2; j++)
+            for (int j = 0; j <= list.Count - 2; j++)
             {
-                for (int i = 0; i <= copiedList.Count - 2; i++)
+                for (int i = 0; i <= list.Count - 2; i++)
                 {
-                    if (copiedList[i] > copiedList[i + 1])
+                    if (list[i] > list[i + 1])
                     {
-                        copiedList.Reverse(i, 2);
+                        list.Reverse(i, 2);
                     }
                 }
             }
-            return copiedList;
+            return list;
         }
 
         public List<int> QuickSort(List<int> list, int left, int right)
